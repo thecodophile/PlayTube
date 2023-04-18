@@ -1,5 +1,12 @@
+import React from "react";
+import { AppContext } from "./context/contextApi";
+
 function App() {
-  return <div className="App">App</div>;
+  return (
+    <AppContext>
+      <div className="text-5xl">App</div>
+    </AppContext>
+  );
 }
 
 export default App;
