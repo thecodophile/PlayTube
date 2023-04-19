@@ -4,7 +4,7 @@ import { fetchDataFromApi } from "../utils/api";
 export const DataContext = createContext();
 
 export const AppContext = (props) => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState("loading");
   const [searchResults, setSearchResults] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [mobileMenu, setMobileMenu] = useState(false);
