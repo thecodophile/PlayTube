@@ -20,6 +20,7 @@ code {
     monospace;
 }
 
+/* loding bar */
 .load-bar {
   position: fixed;
   top: 0;
