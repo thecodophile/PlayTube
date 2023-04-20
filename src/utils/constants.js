@@ -9,10 +9,14 @@ import { ImNewspaper } from "react-icons/im";
 import { GiDiamondTrophy, GiEclipse } from "react-icons/gi";
 import { RiLightbulbLine, RiFeedbackLine } from "react-icons/ri";
 import { FiSettings, FiHelpCircle } from "react-icons/fi";
+import { IoLogoJavascript } from "react-icons/io";
+import { FaReact } from "react-icons/fa";
 
 export const categories = [
   { name: "New", icon: <AiFillHome />, type: "home" },
   { name: "Trending", icon: <MdLocalFireDepartment />, type: "category" },
+  { name: "JavaScript", icon: <IoLogoJavascript />, type: "category" },
+  { name: "ReactJS", icon: <FaReact />, type: "category" },
   { name: "Music", icon: <CgMusicNote />, type: "category" },
   { name: "Films", icon: <FiFilm />, type: "category" },
   { name: "Live", icon: <MdLiveTv />, type: "category" },
