@@ -16,7 +16,7 @@ export const AppContext = (props) => {
   const fetchSelectedCaregoryData = async (query) => {
     setLoading(true);
     const data = await fetchDataFromApi(`search/?q=${query}`);
-    console.log(data.contents); //i did data.contents because the api gives all video data inside contents
+    // console.log(data.contents); //i did data.contents because the api gives all video data inside contents
     setSearchResults(data.contents);
     setLoading(false);
   };

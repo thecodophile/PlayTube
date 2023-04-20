@@ -26,7 +26,7 @@ const VideoDetails = () => {
   const fetchVideoDetails = async () => {
     setLoading(true);
     const data = await fetchDataFromApi(`video/details/?id=${id}`);
-    console.log(data);
+    // console.log(data);
     setVideo(data);
     setLoading(false);
   };
@@ -35,7 +35,7 @@ const VideoDetails = () => {
   const fetchRelatedVideos = async () => {
     setLoading(true);
     const data = await fetchDataFromApi(`video/related-contents/?id=${id}`);
-    console.log(data);
+    // console.log(data);
     setRelatedVideos(data);
     setLoading(false);
   };

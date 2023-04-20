@@ -19,7 +19,7 @@ const SearchResult = () => {
   const fetchSearchResults = async () => {
     setLoading(true);
     const data = await fetchDataFromApi(`search/?q=${searchQuery}`);
-    console.log(data);
+    // console.log(data);
     setResult(data?.contents);
     setLoading(false);
   };
