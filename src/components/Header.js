@@ -34,8 +34,8 @@ const Header = () => {
   };
 
   //I don't want to show menu or leftNav for videoDetails page. for that reason i fetch the path name and use it wisely for video router.
-  const { pathName } = useLocation();
-  const pageName = pathName?.split("/")?.filter(Boolean)?.[0];
+  const { pathname } = useLocation();
+  const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
 
   return (
     <div className="flex flex-row h-14 px-4 md:px-5 justify-between items-center sticky top-0 z-20 bg-white dark:bg-black">
@@ -91,12 +91,12 @@ const Header = () => {
           <div className="flex justify-center items-center ml-2 h-10 w-10 rounded-full hover:bg-[#303030]/[0.6]">
             <FiBell className="text-white text-xl cursor-pointer" />
           </div>
-          <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-            <img
-              src="https://avatars.githubusercontent.com/u/108585532?v=4"
-              alt="Codophile"
-            />
-          </div>
+        </div>
+        <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
+          <img
+            src="https://avatars.githubusercontent.com/u/108585532?v=4"
+            alt="Codophile"
+          />
         </div>
       </div>
     </div>
