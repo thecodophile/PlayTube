@@ -38,7 +38,7 @@ const Header = () => {
   const pageName = pathname?.split("/")?.filter(Boolean)?.[0];
 
   return (
-    <div className="flex flex-row h-14 px-4 md:px-5 justify-between items-center sticky top-0 z-20 bg-white dark:bg-black">
+    <div className="flex flex-row h-14 px-4 md:px-5 justify-between items-center sticky top-0 z-20 bg-black">
       {loading && <Loader />}
 
       <div className="flex h-5 items-center">
@@ -58,7 +58,7 @@ const Header = () => {
           <img
             src={playTube}
             alt="PlayTube"
-            className="h-full hidden dark:md:block"
+            className="h-full hidden md:block"
           />
           <img src={ytLogoMobile} alt="PlayTube" className="h-full md:hidden" />
         </Link>
