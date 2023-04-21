@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Feed from "./pages/Feed";
 import SearchResult from "./pages/SearchResult";
 import VideoDetails from "./pages/VideoDetails";
+import ErrorComponent from "./shared/ErrorComponent";
 
 const AppLayout = () => {
   return (
@@ -20,6 +21,7 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
+    errorElement: <ErrorComponent />,
     children: [
       { path: "/", element: <Feed /> },
       { path: "/searchResult/:searchQuery", element: <SearchResult /> },
