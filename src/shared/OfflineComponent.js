@@ -2,7 +2,7 @@ import React from "react";
 
 const OfflineComponent = () => {
   return (
-    <section className="flex items-center h-full sm:p-16 bg-black text-white">
+    <section className="flex items-center h-full md:h-screen lg:h-screen sm:p-16 bg-black text-white">
       <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8 space-y-8 text-center sm:max-w-md">
         <svg
           xmlns="http://www.w3.org/2000/svg"
