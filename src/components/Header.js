@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import playTube from "../assets/logo-no-background.png";
-import ytLogoMobile from "../assets/yt-logo-mobile.png";
+import playTubeMobile from "../assets/logo-colorfevicon.png";
 
 import { SlMenu } from "react-icons/sl";
 import { IoIosSearch } from "react-icons/io";
@@ -70,7 +70,11 @@ const Header = () => {
             alt="PlayTube"
             className="h-full hidden md:block"
           />
-          <img src={ytLogoMobile} alt="PlayTube" className="h-full md:hidden" />
+          <img
+            src={playTubeMobile}
+            alt="PlayTube"
+            className="h-8 w-8 md:hidden rounded-full"
+          />
         </Link>
       </div>
 
