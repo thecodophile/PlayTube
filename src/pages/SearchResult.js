@@ -7,9 +7,10 @@ import LeftNav from "../components/LeftNav";
 import SearchResultVideoCard from "../components/SearchResultVideoCard";
 import UseOnline from "../utils/UseOnline";
 import OfflineComponent from "../shared/OfflineComponent";
+import ShimmerSearchResultVideoCard from "../shared/ShimmerSearchResultVideoCard";
 
 const SearchResult = () => {
-  const [result, setResult] = useState();
+  const [result, setResult] = useState("");
   const { searchQuery } = useParams();
   const { setLoading } = useContext(DataContext);
 
@@ -40,13 +41,21 @@ const SearchResult = () => {
       {isOnline && (
         <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-black">
           <div className="grid grid-cols-1 gap-2 p-5">
-            {result?.map((item, index) => {
-              if (item?.type !== "video") return false;
-              return (
-                <SearchResultVideoCard key={index} video={item?.video} />
-                // i allways prefered to pass unique key that i got from the api and that is standered way also but for this api some unique key like videoId present twice and more in the searchResults, i don't khow why. So, forcefully i choose map index :(
-              );
-            })}
+            {/* When result is blank means data is not fetched yet meanwhile that time show Shimmer UI 
+             when data fetching is done that means we get result data then show the data in the dom*/}
+            {result === ""
+              ? Array(20)
+                  .fill("")
+                  .map((e, index) => {
+                    return <ShimmerSearchResultVideoCard key={index} />;
+                  })
+              : result?.map((item, index) => {
+                  if (item?.type !== "video") return false;
+                  return (
+                    <SearchResultVideoCard key={index} video={item?.video} />
+                    // i allways prefered to pass unique key that i got from the api and that is standered way also but for this api some unique key like videoId present twice and more in the searchResults, i don't khow why. So, forcefully i choose map index :(
+                  );
+                })}
           </div>
         </div>
       )}

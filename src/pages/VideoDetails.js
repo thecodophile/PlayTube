@@ -9,10 +9,11 @@ import { abbreviateNumber } from "js-abbreviation-number";
 import { fetchDataFromApi } from "../utils/api";
 import { DataContext } from "../context/contextApi";
 import SuggestionVideoCard from "../components/SuggestionVideoCard";
+import ShimmerSuggestionVideoCard from "../shared/ShimmerSuggestionVideoCard";
 
 const VideoDetails = () => {
   const [video, setVideo] = useState();
-  const [relatedVideos, setRelatedVideos] = useState();
+  const [relatedVideos, setRelatedVideos] = useState("");
   const { id } = useParams();
   const { setLoading } = useContext(DataContext);
 
@@ -105,10 +106,18 @@ const VideoDetails = () => {
         </div>
 
         <div className="flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:w-[400px]">
-          {relatedVideos?.contents?.map((item, index) => {
-            if (item?.type !== "video") return false;
-            return <SuggestionVideoCard key={index} video={item?.video} />;
-          })}
+          {/* When relatedVideos is blank means data is not fetched yet meanwhile that time show Shimmer UI 
+             when data fetching is done that means we get relatedVideos data and then show the data in the dom*/}
+          {relatedVideos === ""
+            ? Array(15)
+                .fill("")
+                .map((e, index) => {
+                  return <ShimmerSuggestionVideoCard key={index} />;
+                })
+            : relatedVideos?.contents?.map((item, index) => {
+                if (item?.type !== "video") return false;
+                return <SuggestionVideoCard key={index} video={item?.video} />;
+              })}
         </div>
       </div>
     </div>
