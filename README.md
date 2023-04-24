@@ -8,8 +8,7 @@
 
 <div align="center">
   <a href="https://playtube-eight.vercel.app/">
-    <img alt="Mockup" src="https://user-images.githubusercontent.com/108585532/234017327-dfcc7374-71a3-4b5b-ae9c-299012e76792.png
-" />
+    <img alt="Mockup" src="https://user-images.githubusercontent.com/108585532/234017327-dfcc7374-71a3-4b5b-ae9c-299012e76792.png" />
   </a>
 </div>
 
