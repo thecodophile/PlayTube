@@ -39,7 +39,7 @@ const SearchResult = () => {
         </div>
       )}
       {isOnline && (
-        <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-black">
+        <div className="grow w-[calc(100%-240px)] h-full overflow-y-auto bg-white dark:bg-black">
           <div className="grid grid-cols-1 gap-2 p-5">
             {/* When result is blank means data is not fetched yet meanwhile that time show Shimmer UI 
              when data fetching is done that means we get result data then show the data in the dom*/}

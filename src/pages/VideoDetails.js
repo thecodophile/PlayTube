@@ -42,7 +42,7 @@ const VideoDetails = () => {
   };
 
   return (
-    <div className="flex flex-row justify-center h-[calc(100%-56px)] bg-black">
+    <div className="flex flex-row justify-center h-[calc(100%-56px)] bg-white dark:bg-black">
       <div className="w-full max-w-[1280px] flex flex-col lg:flex-row ">
         <div className="flex flex-col lg:w-[calc(100%-350px)] xl:w-[calc(100%-400px)] px-4 py-3 lg:py-6 overflow-y-auto">
           <div className="h-[200px] md:h-[400px] lg:h-[400px] xl:h-[550px] ml-[-16px] lg:ml-0 mr-[-16px] lg:mr-0">
@@ -56,7 +56,7 @@ const VideoDetails = () => {
             />
           </div>
 
-          <div className="text-white font-bold text-sm md:text-xl mt-4 line-clamp-2">
+          <div className="text-black dark:text-white font-bold text-sm md:text-xl mt-4 line-clamp-2">
             {video?.title}
           </div>
 
@@ -73,29 +73,29 @@ const VideoDetails = () => {
               </div>
 
               <div className="flex flex-col ml-3">
-                <div className="text-white text-base font-semibold flex items-center">
+                <div className="text-black dark:text-white text-base font-semibold flex items-center">
                   {video?.author?.title}
                   {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
-                    <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
+                    <BsFillCheckCircleFill className="text-black/[0.7] dark:text-white/[0.5] text-[12px] ml-1" />
                   )}
                 </div>
 
-                <div className="text-white/[0.7] text-sm">
+                <div className="text-black/[0.7] dark:text-white/[0.7] text-sm">
                   {video?.author?.stats?.subscribersText}
                 </div>
               </div>
             </div>
 
-            <div className="flex text-white mt-4 md:mt-0">
-              <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15]">
-                <AiFillLike className="text-xl text-white mr-2" />
+            <div className="flex text-black dark:text-white mt-4 md:mt-0">
+              <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-black/[0.15] dark:bg-white/[0.15]">
+                <AiFillLike className="text-xl text-black dark:text-white mr-2" />
                 <span>{`${abbreviateNumber(
                   video?.stats?.likes,
                   2
                 )} Likes`}</span>
               </div>
-              <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-white/[0.15] ml-4">
-                <FaEye className="text-xl text-white mr-2" />
+              <div className="flex items-center justify-center h-11 px-6 rounded-3xl bg-black/[0.15] dark:bg-white/[0.15] ml-4">
+                <FaEye className="text-xl text-black dark:text-white mr-2" />
                 <span>{`${abbreviateNumber(
                   video?.stats?.views,
                   2

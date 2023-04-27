@@ -17,7 +17,7 @@ const VideoCard = ({ video }) => {
           {video?.lengthSeconds && <VideoLength time={video?.lengthSeconds} />}
         </div>
 
-        <div className="flex text-white mt-3">
+        <div className="flex text-black dark:text-white mt-3">
           <div className="flex items-start">
             <div className="flex h-9 w-9 rounded-full overflow-hidden">
               <img
@@ -33,16 +33,16 @@ const VideoCard = ({ video }) => {
               {video?.title}
             </span>
 
-            <span className="text-[12px] font-semibold mt-2 text-white/[0.7] flex items-center">
+            <span className="text-[12px] font-semibold mt-2 text-black/[0.7] dark:text-white/[0.7] flex items-center">
               {video?.author?.title}
               {video?.author?.badges[0]?.type === "VERIFIED_CHANNEL" && (
-                <BsFillCheckCircleFill className="text-white/[0.5] text-[12px] ml-1" />
+                <BsFillCheckCircleFill className="text-black/[0.7] dark:text-white/[0.5] text-[12px] ml-1" />
               )}
             </span>
 
-            <div className="flex text-[12px] font-semibold text-white/[0.7] truncate overflow-hidden">
+            <div className="flex text-[12px] font-semibold text-black/[0.7] dark:text-white/[0.7] truncate overflow-hidden">
               <span>{`${abbreviateNumber(video?.stats?.views, 2)} views`}</span>
-              <span className="flex text-[24px] text-white/[0.7] font-bold leading-none relative top-[-10px] mx-1">
+              <span className="flex text-[24px] text-black/[0.7] dark:text-white/[0.7] font-bold leading-none relative top-[-10px] mx-1">
                 .
               </span>
               <span className="truncate">{video?.publishedTimeText}</span>

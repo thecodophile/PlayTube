@@ -8,6 +8,7 @@ export const AppContext = (props) => {
   const [searchResults, setSearchResults] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("New");
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [theme, setTheme] = useState(null);
 
   useEffect(() => {
     fetchSelectedCaregoryData(selectedCategory);
@@ -21,6 +22,22 @@ export const AppContext = (props) => {
     setLoading(false);
   };
 
+  //I make sure that at first browser checks what the preferred theme is, like it is going to check if your browser prefers dark mode or light mode and it is going to act to it accordingly when the website first loads up
+  useEffect(() => {
+    if (window.matchMedia("(prefers-color-scheme:dark)").matches) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, []);
+  useEffect(() => {
+    if (theme === "dark") {
+      document.getElementById("root").classList.add("dark");
+    } else {
+      document.getElementById("root").classList.remove("dark");
+    }
+  }, [theme]);
+
   return (
     <DataContext.Provider
       value={{
@@ -31,6 +48,8 @@ export const AppContext = (props) => {
         setSelectedCategory,
         mobileMenu,
         setMobileMenu,
+        theme,
+        setTheme,
       }}
     >
       {props.children}
